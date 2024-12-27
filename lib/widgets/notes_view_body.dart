@@ -7,12 +7,10 @@ import 'package:nots_app/widgets/notes_list_view.dart';
 class NotesViewBody extends StatelessWidget {
   const NotesViewBody({super.key});
 
-  final data = const [];
-
   @override
   Widget build(BuildContext context) {
     return const Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 24),
+      padding: EdgeInsets.symmetric(horizontal: 24),
       child: Column(
         children: [
           SizedBox(
