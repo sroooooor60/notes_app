@@ -28,11 +28,12 @@ class AddNotForm extends StatefulWidget {
 
 class _AddNotFormState extends State<AddNotForm> {
   //GlobalKey object
+  GlobalKey<FormState> formKey = GlobalKey();
 
-  final GlobalKey<FormState> formKey = GlobalKey();
 // AutovalidateMode object
   AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
 
+  // add variabls to tack textField input
   String? title, subTitle;
   @override
   Widget build(BuildContext context) {

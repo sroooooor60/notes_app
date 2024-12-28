@@ -13,10 +13,9 @@ class CustomTextField extends StatelessWidget {
     return TextFormField(
       onSaved: onSaved,
       validator: (value) {
+        //هنا بنضع الشرط الي عاوزينها علشان نتحكم في مدخلات اليوزر
         if (value?.isEmpty ?? true) {
-          return 'field is required';
-        } else if (value!.length < 3) {
-          return 'min3';
+          return 'Required Field';
         }
       },
       maxLines: maxLines,
