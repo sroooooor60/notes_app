@@ -15,7 +15,7 @@ class AddNotesCubit extends Cubit<AddNotesStats> {
       await notesBox.add(note);
       emit(AddNotesSucces());
     } catch (e) {
-      AddNotesFaliar(errorMessag: e.toString());
+      emit(AddNotesFaliar(errorMessag: e.toString()));
     }
   }
 }
@@ -32,14 +32,14 @@ class AddNotesCubit extends Cubit<AddNotesStats> {
 // Cubit pattern steps
 // خطوات نمطية ثابتة لانشاء الكيوبت وهي :-
 
-// 1- create states
+// 1- create states 
 
 // 2- create cubit
 
 // 3- creat function
 
-// 4- provide cubit
+// 4- provide cubit   MultiBlocProvider or BlocProvider بيتحط فوق شجرة الويدجيت علشان نقدر نوصلة من الأماكن كلها الي محتاجينة فيها 
 
-// 5- integrate cubit
+// 5- integrate cubit  , BlocConsumer Or BlockBuilder Or BlocListner بيتحط في المكان الي بيتغير فية اليو اي 
 
-// 6-trigger cubit
+// 6-trigger cubit     , BlocProvider.of<اسم كلاس الكيوبت>(context).اسم الميثود الي جوا الكيوبت();

@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:nots_app/cubits/add_notes_cubit/add_notes_cubit.dart';
+import 'package:nots_app/models/not_model.dart';
 import 'package:nots_app/widgets/custom_button.dart';
 import 'package:nots_app/widgets/custom_text_feild.dart';
 
@@ -52,9 +55,16 @@ class _AddNotFormState extends State<AddNotForm> {
           CustomButton(
             onTap: () {
               if (formKey.currentState!.validate()) {
-                formKey.currentState!.save();
-                print(title);
-                print(subTitle);
+                formKey.currentState!
+                    .save(); //عند الضغط علي الزر يتم حفظ القيم في المتغيرات في الأون سيفد
+
+                NotModel notModel = NotModel(
+                    title: title!,
+                    subTitle: subTitle!,
+                    date: DateTime.now().toString(),
+                    color: Colors.blue.value);
+
+                BlocProvider.of<AddNotesCubit>(context).addNote(notModel);
               } else {
                 autovalidateMode = AutovalidateMode.always;
                 setState(() {});
