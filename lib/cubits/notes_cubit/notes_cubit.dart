@@ -6,14 +6,9 @@ import 'package:nots_app/models/not_model.dart';
 
 class NotesCubit extends Cubit<NotesState> {
   NotesCubit() : super(Notesinitial());
-
+  List<NotModel>? notes;
   fitchAllNotes() {
-    try {
-      var notesBox = Hive.box<NotModel>(kNotsBox);
-      List<NotModel> notes = notesBox.values.toList();
-      emit(NotesSuccess(notes: notes));
-    } catch (e) {
-      emit(NotesFailure(errorMessage: e.toString()));
-    }
+    var notesBox = Hive.box<NotModel>(kNotsBox);
+    notes = notesBox.values.toList();
   }
 }
