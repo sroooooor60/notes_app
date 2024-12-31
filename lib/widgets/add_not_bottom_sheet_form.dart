@@ -65,7 +65,8 @@ class _AddNotFormState extends State<AddNotForm> {
                     NotModel notModel = NotModel(
                         title: title!,
                         subTitle: subTitle!,
-                        date: DateTime.now().toString(),
+                        date:
+                            '${DateTime.now().year}-${DateTime.now().month}-${DateTime.now().day}',
                         color: Colors.blue.value);
 
                     BlocProvider.of<AddNotesCubit>(context).addNote(notModel);
