@@ -42,7 +42,10 @@ class NotesItem extends StatelessWidget {
                   ),
                 ),
                 trailing: IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    //هنا بيمسح النوت من الداتا بيز الي متخزنة في هايف لان احنا عاملين  في النوت مودل انة يعمل اكستند للهايف اوبجكت
+                    notes.delete();
+                  },
                   icon: const Icon(
                     FontAwesomeIcons.trash,
                     color: Colors.black,
