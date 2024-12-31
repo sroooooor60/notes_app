@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:intl/intl.dart';
 import 'package:nots_app/cubits/add_notes_cubit/add_notes_cubit.dart';
 import 'package:nots_app/cubits/add_notes_cubit/add_notes_stats.dart';
 import 'package:nots_app/models/not_model.dart';
@@ -62,11 +63,13 @@ class _AddNotFormState extends State<AddNotForm> {
                     formKey.currentState!
                         .save(); //عند الضغط علي الزر يتم حفظ القيم في المتغيرات في الأون سيفد
 
+                    var date = DateTime.now();
+                    var formattedDate = DateFormat('dd-mm-yyyy').format(date);
+
                     NotModel notModel = NotModel(
                         title: title!,
                         subTitle: subTitle!,
-                        date:
-                            '${DateTime.now().year}-${DateTime.now().month}-${DateTime.now().day}',
+                        date: formattedDate,
                         color: Colors.blue.value);
 
                     BlocProvider.of<AddNotesCubit>(context).addNote(notModel);
