@@ -26,7 +26,6 @@ class AddNoteButtomSheet extends StatelessWidget {
           }
         },
         builder: (context, state) {
-          print('kebord = ${MediaQuery.of(context).viewInsets.bottom}');
           return AbsorbPointer(
             absorbing: state is AddNotesLoading ? true : false,
             child: Padding(
