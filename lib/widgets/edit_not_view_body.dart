@@ -44,7 +44,7 @@ class _EditNotViewBodyState extends State<EditNotViewBody> {
             onChanged: (value) {
               title = value;
             },
-            hintText: 'Titel',
+            hintText: widget.notes.title,
           ),
           const SizedBox(
             height: 16,
@@ -53,7 +53,7 @@ class _EditNotViewBodyState extends State<EditNotViewBody> {
             onChanged: (value) {
               content = value;
             },
-            hintText: 'Content',
+            hintText: widget.notes.subTitle,
             maxLines: 5,
           ),
         ],
