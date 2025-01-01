@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:nots_app/cubits/notes_cubit/notes_cubit.dart';
 import 'package:nots_app/models/not_model.dart';
 import 'package:nots_app/views/ediet_not_view.dart';
 
@@ -45,6 +47,7 @@ class NotesItem extends StatelessWidget {
                   onPressed: () {
                     //هنا بيمسح النوت من الداتا بيز الي متخزنة في هايف لان احنا عاملين  في النوت مودل انة يعمل اكستند للهايف اوبجكت
                     notes.delete();
+                    BlocProvider.of<NotesCubit>(context).fitchAllNotes();
                   },
                   icon: const Icon(
                     FontAwesomeIcons.trash,
