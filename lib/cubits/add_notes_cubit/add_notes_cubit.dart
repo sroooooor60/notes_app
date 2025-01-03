@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:nots_app/constants.dart';
@@ -6,8 +7,9 @@ import 'package:nots_app/models/not_model.dart';
 
 class AddNotesCubit extends Cubit<AddNotesStats> {
   AddNotesCubit() : super(AddNotesInitial());
-
+  Color color = Color(0xff563635);
   addNote(NotModel note) async {
+    note.color = color.value;
     emit(AddNotesLoading());
 
     try {
