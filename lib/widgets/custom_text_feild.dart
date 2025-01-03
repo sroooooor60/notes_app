@@ -22,6 +22,8 @@ class CustomTextField extends StatelessWidget {
         //هنا بنضع الشرط الي عاوزينها علشان نتحكم في مدخلات اليوزر
         if (value?.isEmpty ?? true) {
           return 'Required Field';
+        } else {
+          return null;
         }
       },
       maxLines: maxLines,

@@ -4,6 +4,7 @@ import 'package:intl/intl.dart';
 import 'package:nots_app/cubits/add_notes_cubit/add_notes_cubit.dart';
 import 'package:nots_app/cubits/add_notes_cubit/add_notes_stats.dart';
 import 'package:nots_app/models/not_model.dart';
+import 'package:nots_app/widgets/color_list_view.dart';
 import 'package:nots_app/widgets/custom_button.dart';
 import 'package:nots_app/widgets/custom_text_feild.dart';
 
@@ -51,6 +52,10 @@ class _AddNotFormState extends State<AddNotForm> {
             hintText: 'content',
             maxLines: 5,
           ),
+          const SizedBox(
+            height: 32,
+          ),
+          ColorsListView(),
           const SizedBox(
             height: 32,
           ),
