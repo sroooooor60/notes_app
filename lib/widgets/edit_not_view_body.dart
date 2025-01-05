@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:nots_app/constants.dart';
+import 'package:nots_app/cubits/add_notes_cubit/add_notes_cubit.dart';
 import 'package:nots_app/cubits/notes_cubit/notes_cubit.dart';
 import 'package:nots_app/models/not_model.dart';
+import 'package:nots_app/widgets/color_list_view.dart';
 import 'package:nots_app/widgets/custom_app_bar.dart';
 import 'package:nots_app/widgets/custom_text_feild.dart';
+import 'package:nots_app/widgets/edit_not_colors_list_view.dart';
 
 class EditNotViewBody extends StatefulWidget {
   const EditNotViewBody({super.key, required this.notes});
@@ -55,6 +59,12 @@ class _EditNotViewBodyState extends State<EditNotViewBody> {
             },
             hintText: widget.notes.subTitle,
             maxLines: 5,
+          ),
+          SizedBox(
+            height: 16,
+          ),
+          EditNotColorsListView(
+            note: widget.notes,
           ),
         ],
       ),
